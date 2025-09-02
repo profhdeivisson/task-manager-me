@@ -1,5 +1,8 @@
 # Gerenciador de Tarefas
 
+## Deploy
+O projeto está disponível em: [https://task-manager-me.vercel.app/](https://task-manager-me.vercel.app/)
+
 ## Resumo do Projeto
 Este projeto é um gerenciador de tarefas desenvolvido com React, TypeScript e Vite. Ele permite criar, organizar e gerenciar projetos e suas etapas, com uma interface responsiva que funciona bem tanto em desktop quanto em dispositivos móveis. O projeto utiliza Supabase como backend para armazenamento e persistência dos dados.
 
