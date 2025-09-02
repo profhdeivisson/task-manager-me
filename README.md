@@ -1,69 +1,72 @@
-# React + TypeScript + Vite
+# Gerenciador de Tarefas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Resumo do Projeto
+Este projeto é um gerenciador de tarefas desenvolvido com React, TypeScript e Vite. Ele permite criar, organizar e gerenciar projetos e suas etapas, com uma interface responsiva que funciona bem tanto em desktop quanto em dispositivos móveis. O projeto utiliza Supabase como backend para armazenamento e persistência dos dados.
 
-Currently, two official plugins are available:
+## Tecnologias Usadas
+- React 18 com TypeScript
+- Vite como bundler
+- Tailwind CSS para estilização
+- Supabase para backend e banco de dados
+- @dnd-kit para funcionalidades de drag and drop
+- SweetAlert2 para feedback visual e confirmações
+- React Icons para ícones
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Principais Funcionalidades
+- Criação, edição e exclusão de projetos
+- Organização de tarefas em etapas (Planejamento, A iniciar, Em execução, Validação, Finalizados)
+- Drag and drop para mover tarefas entre etapas
+- Interface responsiva com menu lateral para desktop e menu hambúrguer para mobile
+- Persistência dos dados no Supabase
+- Validação e feedback visual para ações do usuário
 
-## Expanding the ESLint configuration
+## Como Rodar o Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Requisitos
+- Node.js (versão recomendada: 18.x ou superior)
+- npm (versão recomendada: 9.x ou superior) ou yarn
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Passos para rodar localmente
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/profhdeivisson/task-manager-me.git
+   cd task-manager-me
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Crie uma conta no [Supabase](https://supabase.com/) e configure um novo projeto de banco de dados.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. Copie o arquivo de ambiente de exemplo para criar seu arquivo `.env`:
+   ```bash
+   cp .env.example .env
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+5. No arquivo `.env`, configure as variáveis de ambiente com a URL e a chave pública do seu projeto Supabase:
+   ```
+   VITE_SUPABASE_URL=https://seu-projeto.supabase.co
+   VITE_SUPABASE_ANON_KEY=sua-chave-anonima
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+6. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   # ou
+   yarn dev
+   ```
+
+7. Abra o navegador e acesse `http://localhost:5173` para usar o gerenciador de tarefas.
+
+## Observações
+- O projeto depende do Supabase para armazenar e recuperar os dados dos projetos e tarefas.
+- Para usar o projeto localmente, é necessário ter uma conta no Supabase e configurar o banco de dados conforme descrito.
+- O arquivo `.env` não deve ser compartilhado publicamente, pois contém chaves sensíveis.
+
+---
+
+Se precisar de ajuda para configurar o Supabase ou qualquer outra dúvida, fique à vontade para perguntar!
