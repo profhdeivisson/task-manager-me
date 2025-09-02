@@ -1,5 +1,6 @@
 import { supabase } from '../lib/supabase';
 import type { Project, Card } from '../types';
+import { STAGE_NAMES } from '../types';
 
 export const saveProjects = async (projects: Project[]): Promise<void> => {
   const { error } = await supabase
@@ -49,10 +50,7 @@ export const deleteProject = async (projectId: string): Promise<void> => {
 };
 
 export const createInitialProject = (name: string): Project => {
-  const stageNames: ('Planejamento' | 'A iniciar' | 'Em execução' | 'Validação' | 'Finalizados')[] =
-    ['Planejamento', 'A iniciar', 'Em execução', 'Validação', 'Finalizados'];
-
-  const stages = stageNames.map((name) => ({
+  const stages = STAGE_NAMES.map((name) => ({
     id: name.toLowerCase().replace(' ', '-'),
     name,
     cards: [] as Card[],

@@ -1,4 +1,6 @@
-export type StageName = 'Planejamento' | 'A iniciar' | 'Em execução' | 'Validação' | 'Finalizados';
+export const STAGE_NAMES = ['Planejamento', 'A iniciar', 'Em execução', 'Validação', 'Finalizados'] as const;
+
+export type StageName = typeof STAGE_NAMES[number];
 
 export interface Card {
   id: string;
