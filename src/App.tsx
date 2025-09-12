@@ -68,7 +68,7 @@ function App() {
             setProjects={setProjects}
             onProjectSelect={project => {
               handleProjectSelect(project);
-              setIsMobileMenuOpen(false); // Close menu after selection
+              setIsMobileMenuOpen(false);
             }}
             selectedProjectId={currentProject ? currentProject.id : null}
           />

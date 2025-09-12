@@ -84,7 +84,6 @@ const Project: React.FC<ProjectProps> = ({ project, onProjectUpdate }) => {
   };
 
   const handleEditCard = async (cardId: string) => {
-    // Find the card to edit
     let cardToEdit: Card | null = null;
     let stageIndex = -1;
     let cardIndex = -1;
@@ -163,7 +162,6 @@ const Project: React.FC<ProjectProps> = ({ project, onProjectUpdate }) => {
     const { active } = event;
     const cardId = active.id as string;
 
-    // Find the card being dragged
     for (const stage of project.stages) {
       const card = stage.cards.find(c => c.id === cardId);
       if (card) {
@@ -182,7 +180,6 @@ const Project: React.FC<ProjectProps> = ({ project, onProjectUpdate }) => {
     const cardId = active.id as string;
     const overId = over.id as string;
 
-    // Find source and destination stages
     let sourceStageIndex = -1;
     let destinationStageIndex = -1;
     let cardIndex = -1;
@@ -217,7 +214,6 @@ const Project: React.FC<ProjectProps> = ({ project, onProjectUpdate }) => {
     const cardId = active.id as string;
     const overId = over.id as string;
 
-    // Find source and destination stages
     let sourceStageIndex = -1;
     let destinationStageIndex = -1;
     let cardIndex = -1;
@@ -235,7 +231,6 @@ const Project: React.FC<ProjectProps> = ({ project, onProjectUpdate }) => {
 
     if (sourceStageIndex === -1 || destinationStageIndex === -1) return;
 
-    // If dropping on the same stage, do nothing
     if (sourceStageIndex === destinationStageIndex) return;
 
     const newProject = { ...project };
@@ -291,7 +286,7 @@ const Project: React.FC<ProjectProps> = ({ project, onProjectUpdate }) => {
             if (!container.isDragging) return;
             e.preventDefault();
             const x = e.pageX - container.offsetLeft;
-            const walk = (x - container.startX!) * 2; // scroll-fast
+            const walk = (x - container.startX!) * 2;
             container.scrollLeft = container.scrollLeftStart! - walk;
           }}
         >
