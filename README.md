@@ -73,3 +73,7 @@ Este projeto é um gerenciador de tarefas desenvolvido com React, TypeScript e V
 ---
 
 Se precisar de ajuda para configurar o Supabase ou qualquer outra dúvida, fique à vontade para perguntar!
+
+## ⚙️ Manutenção do banco de dados
+
+Para evitar que o banco de dados no Supabase entre em modo de "pausa" (sleep mode) devido à inatividade, usamos um **cron job**. Um endpoint específico é acessado diariamente pelo serviço [**Uptime Robot**](https://uptimerobot.com/) para garantir que o banco permaneça sempre ativo e responsivo.
