@@ -51,6 +51,9 @@ Este projeto é um gerenciador de tarefas desenvolvido com React, TypeScript e V
    ```
 
 5. No arquivo `.env`, configure as variáveis de ambiente com a URL e a chave pública do seu projeto Supabase:
+   ```.env
+   VITE_SUPABASE_URL=https://seu-projeto.supabase.co
+   VITE_SUPABASE_ANON_KEY=sua-chave-anonima
    ```
    SUPABASE_URL=https://seu-projeto.supabase.co
    SUPABASE_ANON_KEY=sua-chave-anonima
